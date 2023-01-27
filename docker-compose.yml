@@ -1,0 +1,57 @@
+version: "3"
+
+services:
+ # Django application
+ app:
+   build: .
+   ports:
+     - "8000:8000"
+   environment:
+     DB_USER: djangouser
+     DB_HOST: db                        # Write MySQL container name
+     DB_PORT: 3306
+     DB_PASSWORD: djangouserpass
+     DB_NAME: djangodb
+     DB_NAME_TEST: djangodb_test
+   volumes:
+     - .:/app
+     - gunicorn:/var/run/gunicorn
+     - staticdata:/var/www/app/static/
+   depends_on:
+     - db
+
+ # MySQL
+ db:
+   image: mysql:5.7
+   command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+   ports:
+     - "3306:3306"
+   environment:
+     MYSQL_ROOT_PASSWORD: testpass
+     MYSQL_DATABASE: djangodb
+     MYSQL_USER: djangouser
+     MYSQL_PASSWORD: djangouserpass
+   volumes:
+     - data:/var/lib/mysql
+   restart: always
+
+ # Nginx
+ web:
+   image: nginx:1.21.3
+   ports:
+     - "80:80"
+   volumes:
+     - "./nginx/:/etc/nginx/"
+     - "staticdata:/var/www/app/static/"
+     - gunicorn:/var/run/gunicorn
+   depends_on:
+     - app
+   restart: always
+
+volumes:
+ data:
+   driver: local
+ staticdata:
+   driver: local
+ gunicorn:
+   driver: local
