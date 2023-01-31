@@ -5,6 +5,7 @@ https://self-methods.com/django-docker-easy/
 
 # 開発参考
 https://qiita.com/kaki_k/items/511611cadac1d0c69c54
+https://qiita.com/gragragrao/items/373057783ba8856124f3
 
 
 # エラー
