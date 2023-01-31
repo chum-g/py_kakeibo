@@ -7,6 +7,9 @@ https://self-methods.com/django-docker-easy/
 https://qiita.com/kaki_k/items/511611cadac1d0c69c54
 https://qiita.com/gragragrao/items/373057783ba8856124f3
 
+kill `lsof -ti tcp:8000`
+python manage.py runserver 8000
+
 
 # エラー
 webコンテナスタートできない
