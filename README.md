@@ -16,3 +16,12 @@ webコンテナスタートできない
 Error invoking remote method 'docker-start-container': Error: (HTTP code 500) server error - Ports are not available: exposing port TCP 0.0.0.0:80 -> 0.0.0.0:0: listen tcp 0.0.0.0:80: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 エラーによると、portが他で使用されているようです。
 https://qiita.com/Quantum/items/8891fa9c94d03b388555
+
+
+### コマンド
+kill `lsof -ti tcp:8000`
+python manage.py runserver 8000
+mysql -u root -p
+CREATE DATABASE django;
+python manage.py makemigrations
+python manage.py migrate
