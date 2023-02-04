@@ -27,3 +27,6 @@ def detail_month(request, date):
     #     raise Http404("Item does not exist")
     # return render(request, 'kakeibo/detail_month.html', {'item': item})
     return render(request, 'kakeibo/detail_month.html', {'item': 'WRYYYYYYYYY!!!!!!'})
+
+def regist(request, year, month): # , amount, memo, name
+    return render(request, 'kakeibo/detail_month.html', {'item': 'WRY.......'})

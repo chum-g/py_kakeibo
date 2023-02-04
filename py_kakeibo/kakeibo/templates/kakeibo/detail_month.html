@@ -1,1 +1,32 @@
 {{ item }}
+<!-- http://localhost:8000/kakeibo/2023/2/regist/　にアクセスする -->
+<form action="{% url 'kakeibo:regist' 2023 2 %}" method="post">
+    <!-- Djangoの機能　csrf対策 -->
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>X月X日</h1></legend>
+        <legend><h1>合計0円</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <div>
+            絞り込み:
+            <select name="fillter">
+                <option>選択肢のサンプル1</option>
+                <option>選択肢のサンプル2</option>
+                <option>選択肢のサンプル3</option>
+            </select>
+        </div>
+        <div>
+            並び順:
+            <select name="sort">
+                <option>選択肢のサンプル1</option>
+                <option>選択肢のサンプル2</option>
+                <option>選択肢のサンプル3</option>
+            </select>
+        </div>
+        {% for choice in question.choice_set.all %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+        {% endfor %}
+    </fieldset>
+    <input type="submit" value="regist">    
+</form>
