@@ -26,6 +26,9 @@ CREATE DATABASE django;
 python manage.py makemigrations
 python manage.py migrate
 
+### modelの作成、登録の記事
+https://kuma-server.com/create-save/
+トランザクションの張り方を勉強
 
 ### フォーム
 <form action="{% url '[アプリ名]:[urlsのname]' [引数として渡す変数名] %}" method="post">

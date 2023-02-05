@@ -18,7 +18,8 @@ def index(request):
     context = {'latest_item_list': latest_item_list}
     return render(request, 'kakeibo/index.html', context)
 
-def detail_month(request, date):
+# def detail_month(request, date):
+def detail_month(request):
     # response = "You're looking at the results of question %s."
     # return HttpResponse(response % date)
     # try:
@@ -26,6 +27,7 @@ def detail_month(request, date):
     # except Item.DoesNotExist:
     #     raise Http404("Item does not exist")
     # return render(request, 'kakeibo/detail_month.html', {'item': item})
+    Item.objects.create(itam_id=0, user_id=0, item_name='スタバ', item_amount=2000, item_memo='新作', item_date='2023-02-05')
     return render(request, 'kakeibo/detail_month.html', {'item': 'WRYYYYYYYYY!!!!!!'})
 
 def regist(request, year, month): # , amount, memo, name
