@@ -37,3 +37,4 @@ def signup(request):
 
 
 def login_user(request, user):
+    return
