@@ -19,12 +19,15 @@ https://qiita.com/Quantum/items/8891fa9c94d03b388555
 
 
 ### コマンド
+django-admin startproject [プロジェクト名]
+python manage.py startapp [アプリ名]
+python -m django --version
 kill `lsof -ti tcp:8000`
 python manage.py runserver 8000
 mysql -u root -p
 CREATE DATABASE django;
 python manage.py makemigrations
-python manage.py migrate
+python manage.py migrate クローン後はこれが必要かも
 
 ### modelの作成、登録の記事
 https://kuma-server.com/create-save/

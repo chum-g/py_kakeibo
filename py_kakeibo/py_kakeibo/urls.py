@@ -2,7 +2,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('kakeibo/', include('kakeibo.urls')),
+    path('detail/', include('detail.urls')),
+    path('login/', include('login.urls')),
     path('admin/', admin.site.urls),
-    path('', include('kakeibo.urls')),
+    # path('', include('kakeibo.urls')),
 ]

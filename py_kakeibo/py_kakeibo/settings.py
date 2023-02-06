@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'kakeibo.apps.KakeiboConfig',
+    'detail.apps.DetailConfig',
+    'login.apps.LoginConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'kakeibo',
 ]
+LOGIN_URL = 'login:login'            # ログイン時
+LOGIN_REDIRECT_URL = 'login:index'   # ログイン後
+LOGOUT_REDIRECT_URL = 'login:index'  # ログアウト後
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
