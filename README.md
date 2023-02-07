@@ -1,4 +1,7 @@
 # py_kakeibo
+テストユーザ情報：
+    test23XX
+    test_passwd
 
 # 環境構築
 https://self-methods.com/django-docker-easy/
@@ -23,7 +26,7 @@ django-admin startproject [プロジェクト名]
 python manage.py startapp [アプリ名]
 python -m django --version
 kill `lsof -ti tcp:8000`
-python manage.py runserver 8000
+python manage.py runserver 0.0.0.0:8000 (runserver 8000 ???)
 mysql -u root -p
 CREATE DATABASE django;
 python manage.py makemigrations
