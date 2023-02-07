@@ -9,6 +9,7 @@ urlpatterns = [
    # ex: /kakeibo/5/
    # path('<int:date>/', views.detail_month, name='detail'),
    path('', views.detail_month, name='detail'),
+   path('index/', views.index, name='index'),
    # ex: /kakeibo/5/results/
    #  path('<int:question_id>/results/', views.results, name='results'),
    # ex: /kakeibo/5/vote/

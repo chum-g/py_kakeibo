@@ -16,6 +16,7 @@ def index(request):
     # return HttpResponse(output)
     # return HttpResponse(template.render(context, request))
     context = {'latest_item_list': latest_item_list}
+    context |= {'user_name': request.user.username}
     return render(request, 'detail/index.html', context)
 
 # def detail_month(request, date):
