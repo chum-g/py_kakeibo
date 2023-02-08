@@ -6,7 +6,7 @@ from django.contrib.auth import views as auth_views
 app_name = 'login'
 # http://localhost:8000/login/~で表示するurlたち
 urlpatterns = [
-   path('', views.login, name='login'),
+   # path('', views.login, name='login'),
    path('admin/', admin.site.urls),
    path('detail/', include('detail.urls')),
    path("login/", auth_views.LoginView.as_view(template_name="login/login.html"), name="login"),

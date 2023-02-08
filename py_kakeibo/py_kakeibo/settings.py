@@ -31,8 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'detail.apps.DetailConfig',
-    'login.apps.LoginConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'kakeibo',
+    'detail.apps.DetailConfig',
+    'login.apps.LoginConfig',
+    'notification.apps.NotificationConfig',
+    'common.apps.CommonConfig',
+    # 'py_kakeibo/',
 ]
 LOGIN_URL = 'login:login'            # ログイン時
 LOGIN_REDIRECT_URL = 'login:index'   # ログイン後
