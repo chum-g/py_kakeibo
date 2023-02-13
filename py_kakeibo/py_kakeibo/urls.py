@@ -4,6 +4,7 @@ from django.urls import include, path
 urlpatterns = [
     path('detail/', include('detail.urls')),
     path('login/', include('login.urls')),
+    path('notification/', include('notification.urls')),
     path('admin/', admin.site.urls),
     # path('', include('kakeibo.urls')),
 ]

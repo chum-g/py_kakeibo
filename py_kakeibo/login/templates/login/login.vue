@@ -1,0 +1,24 @@
+ <!-- extends 'app/base.html'  -->
+ {% block content %}
+    <h2>ログイン</h2>
+    {{ cont }}
+    <form method="POST" action="{% url 'login:login' %}">
+        {% csrf_token %}
+        {% if form.errors %}
+            <p>ユーザー名またはパスワードが間違っています。もう一度入力してください。</p>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'login:logout' %}">ログアウト</a>
+        {% else %}
+            <label>ユーザー名</label>
+            <input name="username">
+            <br>
+            <label>パスワード</label>
+            <input type="password" name="password">
+            <br>
+            <input type="submit" value="ログイン">
+            <br>
+            <a href="{% url 'login:signup' %}">ユーザー登録</a>
+        {% endif %}
+    </form>
+ {% endblock %}

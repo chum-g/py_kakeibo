@@ -22,15 +22,15 @@ services:
       - 3333:3306
     volumes:
       - db-data:/var/lib/mysql
-  vue:
-    container_name: vue
-    build: .
-    ports:
-      - "8080:8080"
-    volumes:
-      # - "vue-vol:/var/www/html"
-      - "../:/var/www/html"
-    tty: true
+  # vue:
+  #   container_name: vue
+  #   build: .
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     # - "vue-vol:/var/www/html"
+  #     - "../:/var/www/html"
+  #   tty: true
 
 volumes:
   db-data:
