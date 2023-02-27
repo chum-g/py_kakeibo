@@ -2,11 +2,8 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>
-        {% block title_block %}
-        <!-- この中は継承先で定義 -->
+        {% block title %}
         {% endblock %}
-        </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- Bootstrapの読み込み -->
 
@@ -14,11 +11,19 @@
         {% endblock %}
     </head>
     <body>
-        <!-- <h1>Home Page</h1> -->
+        <!-- link -->
+        <div class="col-12 col-lg-2">
+        <!-- <div class="col-12 col-lg-2" style="margin:2rem 0rem 0rem 0rem;"> -->
+            {% include 'common/sidebar.vue'%}
+        </div>
+        <!-- /link -->
         <div class="container">
-        {% block body_block %}
-        <!-- この中は継承先で定義 -->
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div>
+            <a href="{{request.META.HTTP_REFERER}}">前のページに戻る</a>
         </div>
     </body>
 </html>

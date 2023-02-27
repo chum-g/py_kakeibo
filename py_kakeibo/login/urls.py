@@ -7,9 +7,9 @@ app_name = 'login'
 # http://localhost:8000/login/~で表示するurlたち
 urlpatterns = [
    # path('', views.login, name='login'),
+   path("", auth_views.LoginView.as_view(template_name="login/login.vue"), name="login"),
    path('admin/', admin.site.urls),
    path('detail/', include('detail.urls')),
-   path("", auth_views.LoginView.as_view(template_name="login/login.vue"), name="login"),
    path('index/', views.index, name='index'),
    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
    path("signup/", views.signup, name="signup"),

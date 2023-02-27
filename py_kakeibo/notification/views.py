@@ -9,6 +9,7 @@ from datetime import date
 def notification(request):
     notification_list = Notification.objects.order_by('notification_id')[:5]
 
+    context = {}
     context  = {'notification_list': notification_list}
     context |= {'user_name': request.user.username}
 
@@ -21,9 +22,10 @@ def notification(request):
 @login_required
 def detail(request, notification_id):
     notification = Notification.objects.get(notification_id = 0)
-
-    context  = {'notification': notification}
-    context |= {'user_name': request.user.username}
+    var_user_name = request.user.username # 表示テスト用サンプル
+    context = {}
+    context["notification"]  = notification
+    context["user_name"]     = request.user.username
 
     template = "notification/notification_detail.vue"
     return render(request, template, context)
