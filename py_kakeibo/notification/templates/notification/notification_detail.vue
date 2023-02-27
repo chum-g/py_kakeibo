@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+    <h1>お知らせ</h1>
     {% if notification %}
         <div>
             <table>

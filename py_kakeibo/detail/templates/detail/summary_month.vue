@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+    <h1>月間集計</h1>
     {% if notification_list %}
         <ul>
         {% for notification in notification_list %}

@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block content %}
+    <h1>家計簿</h1>
     {% if latest_item_list %}
         <ul>
         {% for item in latest_item_list %}
@@ -13,7 +14,4 @@
     {% else %}
         <p>No items are available.</p>
     {% endif %}
-    <div>
-        <a href="{{request.META.HTTP_REFERER}}">前のページに戻る</a>
-    </div>
 {% endblock %}

@@ -11,10 +11,10 @@
     </a></p>
 
 <p style="font-weight: bold; ">家計簿</p>
-    <p style="text-indent: 1rem;"><a href='/detail/{{year}}/{{month}}'> 
+    <p style="text-indent: 1rem;"><a href='/detail/summary_year'> 
         ・年間集計
     </a></p>
-    <p style="text-indent: 1rem;"><a href='/detail/{{month}}'>
+    <p style="text-indent: 1rem;"><a href='/detail/summary_month'>
         ・月間集計
     </a></p>
     <p style="text-indent: 1rem;"><a href='/detail/index'>

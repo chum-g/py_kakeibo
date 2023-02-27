@@ -35,7 +35,14 @@ def edit(request, year, month): # , amount, memo, name
     return render(request, template, context)
 
 @login_required
-def summary_month(request, year, month):
+def summary_month(request):
+    d = date.today()
+    year = d.year
+    month = d.month
+    return summary_month_y_m(request, year, month)
+
+@login_required
+def summary_month_y_m(request, year, month):
 
     item_list = Item.objects.get(id = 1)
 
@@ -48,7 +55,13 @@ def summary_month(request, year, month):
     return render(request, template, context)
 
 @login_required
-def summary_year(request, year):
+def summary_year(request):
+    d = date.today()
+    year = d.year
+    return summary_year_y(request, year)
+
+@login_required
+def summary_year_y(request, year):
 
     item_list = Item.objects.get(id = 1)
 
