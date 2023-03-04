@@ -14,6 +14,8 @@ class Item(models.Model):
     item_date = models.DateTimeField('date published')
 
 class FixedItem(models.Model):
+    # 固定費の項目
+    
     fixed_item_id = models.IntegerField(default=0)
     user_id = models.IntegerField(default=0)
     fixed_item_name = models.CharField(max_length=200)

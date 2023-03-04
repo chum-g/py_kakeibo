@@ -15,6 +15,7 @@ urlpatterns = [
    path('<int:year>/'                     , views.summary_year_y   , name=''),
    path('summary_month/'                  , views.summary_month    , name='summary_month'),
    path('summary_year/'                   , views.summary_year     , name='summary_year'),
+   path('<int:item_id>/item_edit/'        , views.item_edit        , name='item_edit'),
    # ex: /kakeibo/5/results/
    #  path('<int:question_id>/results/', views.results, name='results'),
    # ex: /kakeibo/5/vote/

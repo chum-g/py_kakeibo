@@ -8,7 +8,7 @@
     {% if latest_item_list %}
         <ul>
         {% for item in latest_item_list %}
-            <li><a href="/kakeibo/{{ item.id }}/">{{ item.item_name }}</a></li>
+            <li><a href="/detail/{{ item.id }}/item_edit/">{{ item.item_name }}</a></li>
         {% endfor %}
         </ul>
     {% else %}

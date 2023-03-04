@@ -5,13 +5,13 @@
 
 {% block content %}
     <h1>月間集計</h1>
-    {% if notification_list %}
+    {% if item_list %}
         <ul>
-        {% for notification in notification_list %}
-            <li><a href="/notification/{{ notification.id }}/">{{ notification.notification_title }}</a></li>
+        {% for item in item_list %}
+            <li><a href="/detail/{{ item.item_id }}/item_edit"></a></li>
         {% endfor %}
         </ul>
     {% else %}
-        <p>No notification are available.</p>
+        <p>No item</p>
     {% endif %}
 {% endblock %}
